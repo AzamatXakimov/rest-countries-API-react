@@ -1,0 +1,70 @@
+/* ROOT */
+:root{
+  --main-font-family: "Nunito Sans", "Arial", sans-serif;
+  --main-font-weight: 400;
+  --main-body-bg-color: #fafafa;
+  --main-card-bg-color: #fff;
+  --main-text-color: #111517;
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: 
+  url("./assets/fonts/nunito-sans-v12-latin-300.woff2") format("woff2"), 
+  url("./assets/fonts/nunito-sans-v12-latin-300.woff") format("woff"); 
+}
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: 
+  url("./assets/fonts/nunito-sans-v12-latin-regular.woff2") format("woff2"), 
+  url("./assets/fonts/nunito-sans-v12-latin-regular.woff") format("woff"); 
+}
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: 
+  url("./assets/fonts/nunito-sans-v12-latin-600.woff2") format("woff2"), 
+  url("./assets/fonts/nunito-sans-v12-latin-600.woff") format("woff"); 
+}
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: 
+  url("./assets/fonts/nunito-sans-v12-latin-800.woff2") format("woff2"), 
+  url("./assets/fonts/nunito-sans-v12-latin-800.woff") format("woff"); 
+}
+
+*{
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+}
+
+img{
+  display: block;
+  height: auto;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  background-color: var(--main-body-bg-color);
+  color: var(--main-text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

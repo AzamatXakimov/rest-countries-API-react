@@ -1,0 +1,53 @@
+
+.search-form{
+    max-width: 480px;
+    width: 100%;
+}
+
+.hero-search{
+    padding-top: 18px;
+    padding-right: 18px;
+    padding-bottom: 18px;
+    padding-left: 74px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--main-text-color);
+    background-color: var(--main-card-bg-color);
+    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+    border-radius: 5px;
+    background-image: url("../../assets/images/icon-search-black.svg");
+    background-repeat: no-repeat;
+    background-position: center  left+32px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.hero-search::placeholder{
+    font-weight: 400;
+    color: #848484;
+}
+.region-form{
+    max-width: 200px;
+    width: 100%;
+}
+
+.hero-select{
+    padding-top: 18px;
+    padding-right: 18px;
+    padding-bottom: 18px;
+    padding-left: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--main-text-color);
+    background-color: var(--main-card-bg-color);
+    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+    border-radius: 5px;
+    background-image: url("../../assets/images/arrow-to-bottom-black.svg");
+    background-repeat: no-repeat;
+    background-position: center  right+19px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    appearance: none;
+}
+
+.countries-list{
+    margin-top: 45px;   
+}
