@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Card.css";
 // import Germany from "../../../assets/images/Germany.svg"
 
@@ -17,9 +18,9 @@ const Card = ({img, title, population, region, capital}) => {
                         <p className="hero-country-desc mb-0">Capital: <span className="hero-country-desc-text js-country-capital">{capital}</span></p>
                     </div>
                     
-                    <button className="btn btn-outline-success mt-3" type="button">
+                    <Link className="btn btn-outline-success mt-3" to={`country/${title}`}>
                         More info
-                    </button>
+                    </Link>
                 </div>
             </div>
         </li>
