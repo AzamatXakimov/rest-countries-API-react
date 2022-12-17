@@ -1,9 +1,10 @@
 import "./Country.css";
-import {Link, useParams} from "react-router-dom"
+import {Link, useParams, useNavigate} from "react-router-dom"
 import React from "react"
 import { Borders } from "./Borders/Borders";
 export const Country = () => {
     const {countryName} =  useParams();
+    const navigate = useNavigate();
     const [data, setData] = React.useState({});
     let[loading, setLoading] = React.useState(true);
     let[isError, setIsError] = React.useState(false);
@@ -28,7 +29,7 @@ export const Country = () => {
                 <div className="container">
                     {loading && <h2>Loading ...</h2>}
                     {isError && <h2>Error ...</h2>}
-                    <Link className="country-back-link" to="/">Back</Link>
+                    <button className="country-back-link" type="button" onClick={() => navigate(-1)}>Back</button>
                     <div className="d-flex align-items-center justify-content-between">
                         <img className="country-flag" src={data.flags?.svg} width="560" height="401" alt={`${data.name?.common} Flag`} />
                         <div className="country-box">
