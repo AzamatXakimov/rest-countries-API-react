@@ -1,6 +1,7 @@
 import React from "react";
 import "./Main.css"
 import Card from "./Card/Card"
+import { useTranslation } from 'react-i18next';
 
 const Main = () => {
     const [inputValue, setInputValue] = React.useState("")
@@ -8,7 +9,7 @@ const Main = () => {
     let[loading, setLoading] = React.useState(true)
     let[isError, setIsError] = React.useState(false)
     let [data, setData] = React.useState([])
-
+    const {t} = useTranslation()
     // async function getInfo(){
     //     try {
     //         const res = await fetch(`https://restcountries.com/v3.1/all`)
@@ -127,11 +128,11 @@ const Main = () => {
                 <div className="container">
                     <div className="d-flex align-items-center justify-content-between">
                         <form className="search-form" onSubmit={evt => evt.preventDefault()}>
-                            <input className="hero-search w-100 border-0" type="text" onKeyDown={changeValue} name="search_value" aria-label="Search" placeholder="Search for a country…"/>
+                            <input className="hero-search w-100 border-0" type="text" onKeyDown={changeValue} name="search_value" aria-label="Search" placeholder={t("Main.SearchPlaceholder")}/>
                         </form>
                         <form className="region-form" action="#" method="post" onSubmit={evt => evt.preventDefault()}>
                             <select className="hero-select  w-100" aria-label="Choose Region" onChange={(evt) => setSelectValue(evt.target.value)}>
-                                <option className="hero-options" value="" selected>Filter by Region</option>
+                                <option className="hero-options" value="" selected>{t("Main.FilterByRegion")}</option>
                                 <option className="hero-options" value="africa">Africa</option>
                                 <option className="hero-options" value="americas">Americas</option>
                                 <option className="hero-options" value="asia">Asia</option>

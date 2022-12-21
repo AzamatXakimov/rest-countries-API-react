@@ -25,6 +25,12 @@
     font-weight: 400;
     color: #848484;
 }
+.dark .hero-search{
+    background-image: url("../../assets/images/icon-search-white.svg");
+}
+.dark .hero-search::placeholder{
+    color: var(--main-text-color);
+}
 .region-form{
     max-width: 200px;
     width: 100%;
@@ -46,6 +52,9 @@
     background-position: 160px center;
     transition: background-color 0.3s ease, color 0.3s ease;
     appearance: none;
+}
+.dark .hero-select{
+    background-image: url("../../assets/images/arrow-to-bottom-white.svg");
 }
 
 .countries-list{

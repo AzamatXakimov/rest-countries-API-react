@@ -68,3 +68,20 @@ body{
   color: var(--main-text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.body-bg{
+  background-color: var(--main-body-bg-color);
+}
+
+.react-root{
+  flex-grow: 1;
+}
+
+.dark{
+  --main-body-bg-color: #202c36;
+  --main-card-bg-color: #2b3844;
+  --main-text-color: #fff;
+}
+.site-main{
+  padding-top: 48px;
+}

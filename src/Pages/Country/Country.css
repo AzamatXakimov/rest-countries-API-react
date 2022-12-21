@@ -1,6 +1,9 @@
 .country{
     padding-top: 32px;
 }
+.Info-text{
+    color: var(--main-text-color);
+}
 
 .country-back-link{
     display: inline-flex;
@@ -13,14 +16,15 @@
     font-weight: 300;
     font-size: 16px;
     line-height: 20px;
-    color: #111517;
-    background-color: #fff;
+    color: var(--main-text-color);
+    background-color: var(--main-card-bg-color);
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.293139);
     border-radius: 6px;
     text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 .country-back-link:hover{
-    color: #111517;
+    color: var(--main-text-color);
 }
 .country-back-link::before{
     display: inline-block;
@@ -32,6 +36,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     content: "";
+}
+.dark .country-back-link::before{
+    background-image: url("../../assets/images/arrow-to-left-white.svg");
+    background-size: 20px 20px;
 }
 
 .country-flag{
@@ -48,7 +56,8 @@
     font-weight: 800;
     font-size: 32px;
     line-height: 44px;
-    color: #111517;
+    color: var(--main-text-color);
+    transition: color 0.3s ease;
 }
 
 .country-info-box{
@@ -59,12 +68,14 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 32px;
-    color: #111517;
+    color: var(--main-text-color);
+    transition: color 0.3s ease;
 }
 
 .country-info-title{
     font-weight: 800;
     font-size: 16px;
     line-height: 32px;
-    color: #111517;
+    color: var(--main-text-color);
+    transition: color 0.3s ease;
 }

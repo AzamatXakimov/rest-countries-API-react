@@ -1,6 +1,7 @@
 import "./Country.css";
-import {Link, useParams, useNavigate} from "react-router-dom"
+import {useParams, useNavigate} from "react-router-dom"
 import React from "react"
+import { useTranslation } from 'react-i18next';
 import { Borders } from "./Borders/Borders";
 export const Country = () => {
     const {countryName} =  useParams();
@@ -8,6 +9,8 @@ export const Country = () => {
     const [data, setData] = React.useState({});
     let[loading, setLoading] = React.useState(true);
     let[isError, setIsError] = React.useState(false);
+
+    const {t} = useTranslation()
 
 
     React.useEffect(() => {
@@ -27,9 +30,9 @@ export const Country = () => {
         <main className="site-main">
             <section className="country">
                 <div className="container">
-                    {loading && <h2>Loading ...</h2>}
-                    {isError && <h2>Error ...</h2>}
-                    <button className="country-back-link" type="button" onClick={() => navigate(-1)}>Back</button>
+                    {loading && <h2 className="Info-text">Loading ...</h2>}
+                    {isError && <h2 className="Info-text">Error ...</h2>}
+                    <button className="country-back-link border-0" type="button" onClick={() => navigate(-1)}>{t("CountryCard.BackBtn")}</button>
                     <div className="d-flex align-items-center justify-content-between">
                         <img className="country-flag" src={data.flags?.svg} width="560" height="401" alt={`${data.name?.common} Flag`} />
                         <div className="country-box">
@@ -39,36 +42,36 @@ export const Country = () => {
                             <div className="country-info-box d-flex align-items-start justify-content-between">
                                 <ul className="mb-0 me-2 list-unstyled">
                                     <li className="mb-2">
-                                        <p className="country-info-text mb-0"><span className="country-info-title">Native Name:</span> {data.name?.common}</p>
+                                        <p className="country-info-text mb-0"><span className="country-info-title">{t("CountryCard.NativeName")}:</span> {data.name?.common}</p>
                                     </li>
                                     <li className="mb-2">
-                                        <p className="country-info-text mb-0"><span className="country-info-title">Population: </span> {data.population}</p>
+                                        <p className="country-info-text mb-0"><span className="country-info-title">{t("CountryCard.Population")}: </span> {data.population}</p>
                                     </li>
                                     <li className="mb-2">
-                                        <p className="country-info-text mb-0"><span className="country-info-title">Region: </span> {data.region}</p>
+                                        <p className="country-info-text mb-0"><span className="country-info-title">{t("CountryCard.Region")}: </span> {data.region}</p>
                                     </li>
                                     <li className="mb-2">
-                                        <p className="country-info-text mb-0"><span className="country-info-title">Sub Region: </span> {data.subregion}</p>
+                                        <p className="country-info-text mb-0"><span className="country-info-title">{t("CountryCard.SubRegion")}: </span> {data.subregion}</p>
                                     </li>
                                     <li className="mb-2">
-                                        <p className="country-info-text mb-0"><span className="country-info-title">Capital: </span> {data.capital?.join(", ")}</p>
+                                        <p className="country-info-text mb-0"><span className="country-info-title">{t("CountryCard.Capital")}: </span> {data.capital?.join(", ")}</p>
                                     </li>
                                 </ul>
                                 <ul className="mb-0 list-unstyled">
                                     <li className="mb-2">
-                                        <p className="country-info-text mb-0"><span className="country-info-title">Top Level Domain: </span> {data.tld?.join(", ")}</p>
+                                        <p className="country-info-text mb-0"><span className="country-info-title">{t("CountryCard.TLD")}: </span> {data.tld?.join(", ")}</p>
                                     </li>
                                     <li className="mb-2">
-                                        <p className="country-info-text mb-0"><span className="country-info-title">Currencies: </span> {data.currencies ? data.currencies[Object.keys(data.currencies)[0]].name : data.currencies}</p>
+                                        <p className="country-info-text mb-0"><span className="country-info-title">{t("CountryCard.Currencies")}: </span> {data.currencies ? data.currencies[Object.keys(data.currencies)[0]].name : data.currencies}</p>
                                     </li>
                                     <li className="mb-2">
-                                        <p className="country-info-text mb-0"><span className="country-info-title">Languages: </span> {data.languages ? Object.values(data.languages).join(", ") : data.languages}</p>
+                                        <p className="country-info-text mb-0"><span className="country-info-title">{t("CountryCard.Languages")}: </span> {data.languages ? Object.values(data.languages).join(", ") : data.languages}</p>
                                     </li>
                                 </ul>
                             </div>
 
                             <div className="d-flex align-items-start">
-                                <p className="country-info-title mb-0">Border Countries: </p>
+                                <p className="country-info-title mb-0">{t("CountryCard.BorderCountries")}: </p>
                                 <ul className="d-flex align-items-center flex-wrap  w-auto  mb-0 ms-3 list-unstyled">
                                     {data.borders ? data.borders.map(item => <Borders>{item}</Borders>) : ""}
                                 </ul>
